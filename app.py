@@ -8,7 +8,7 @@ with open('iris_classifier_new.pkl', 'rb') as f:
 
 # Streamlit UI
 st.title("Iris Prediction Web App")
-st.write("🔍 This app uses a Logistic Regression to predict type of iris.")
+st.write("🔍 This app uses a Random Forest Regression to predict type of iris.")
 
 # Collect user input
 SepalLengthCm = st.number_input("SepalLengthCm", min_value=4.3, max_value=7.9, value=5.8)
@@ -20,7 +20,6 @@ PetalWidthCm = st.number_input("PetalWidthCm", min_value=0.1, max_value=2.5, val
 if st.button("Predict Follow-up Requirement"):
     import pandas as pd
     input_df = pd.DataFrame([{
-        #'Id': 0,  # Dummy ID, since model expects it
         'SepalLengthCm': SepalLengthCm,
         'SepalWidthCm': SepalWidthCm,
         'PetalLengthCm': PetalLengthCm,
